@@ -4,7 +4,7 @@ const bodyParser = require('body-parser');
 const mongoose = require('mongoose');
 const port = process.env.PORT || 8000;
 const path = require("path");
-const secret = process.env.SECRET || "localserversecret";
+const secret = process.env.SECRET || "local server secret watson beebot";
 require("dotenv").config()
 
 const app = express();
@@ -19,7 +19,7 @@ mongoose.connect(process.env.MONGODB_URI || "mongodb://localhost/issues", err =>
     console.log("Connected to the database.");
 });
 
-app.get("*", (req, res) => {  
+app.get("*", (req, res) => {
     res.sendFile(path.join(__dirname, "client", "build", "index.html"));
 });
 
