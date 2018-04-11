@@ -43,6 +43,25 @@ class Home extends Component {
     handleAudioSubmit(e) {
         e.preventDefault();
         console.log(this.state.voiceInput);
+        // axios.post("https://api.cloudconvert.com/convert", {
+        //     "apikey": "LgbWsqhPgG6d3zoeFVtoqjlD2ekx1t36vShLjKWPquezbd3U1CQxHllIMWAf3iosKBOp6yRF2oWGssAZa77PDw",
+        //     "inputformat": "webm",
+        //     "outputformat": "flac",
+        //     "input": "upload",
+        //     "wait": true,
+        //     "file": this.state.voiceInput.blob
+        // }).then(response => {
+        //     console.log(response.data);
+        //     axios.post("/question/", {type: "audio", input: response.data}).then(response => {
+        //         this.setState({
+        //             textInput: "",
+        //             voiceInput: "",
+        //             record: false,
+        //             answerAudio: "",
+        //             textAnswer: ""
+        //         })
+        //     });
+        // })
         axios.post("/question/", {type: "audio", input: this.state.voiceInput}).then(response => {
             this.setState({
                 textInput: "",
