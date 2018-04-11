@@ -95,7 +95,7 @@ class Home extends Component {
     return (
       <div className="home">
           <div className="container">
-        <h1>Welcome to Watson Beebot</h1>
+        <h1>Welcome to Watson BeeBot</h1>
         <form onSubmit={this.handleTextSubmit}>
             <TextField
                 hintText="Type your question..."
