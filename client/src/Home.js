@@ -29,7 +29,7 @@ class Home extends Component {
 
     handleTextSubmit(e) {
         e.preventDefault();
-        axios.post("/question/", {type: "audio", input: this.state.voiceInput}).then(response => {
+        axios.post("/question/", {type: "text", input: this.state.textInput}).then(response => {
             this.setState({
                 textInput: "",
                 voiceInput: "",

@@ -18,13 +18,16 @@ questionRoutes.get('/', (req, res) => {
 questionRoutes.post('/', (req, res) => {
     Question.find((err, questions) => {
         if (err) return res.status(500).send(questions);
+        console.log(questions);
         if (questions.length !== 0) {
             const updatedQuestion = questions[0];
-            for (key in Object.keys(req.body)) {
+            for (key of Object.keys(req.body)) {
                 updatedQuestion[key] = req.body[key]
             }
-            if (err) return res.status(500).send(updatedQuestion);
-            return res.send(updatedQuestion);
+            updatedQuestion.save(err => {
+                if (err) return res.status(500).send(err);
+                return res.status(201).send(updatedQuestion);
+            });
         } else {
             const newQuestion = new Question(req.body);
             newQuestion.save(err => {
