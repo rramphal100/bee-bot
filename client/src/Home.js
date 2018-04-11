@@ -89,7 +89,7 @@ class Home extends Component {
         </form>
         <h3>OR</h3>
         <h4>Record your question...</h4>
-        <form onSubmit={this.handleVoiceSubmit}>
+        <form onSubmit={this.handleAudioSubmit}>
             <ReactMic
               record={this.state.record}
               onStop={this.onStop}
