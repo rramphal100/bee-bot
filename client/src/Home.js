@@ -75,6 +75,7 @@ class Home extends Component {
       const buttonStyle = {margin: "20px auto", display: "block", width: "200px"}
     return (
       <div className="home">
+          <div className="container">
         <h1>Welcome to Watson Beebot</h1>
         <form onSubmit={this.handleTextSubmit}>
             <TextField
@@ -117,6 +118,7 @@ class Home extends Component {
                     </audio>
             </div>
         }
+        </div>
       </div>
     );
   }
