@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import TextField from 'material-ui/TextField';
 import RaisedButton from 'material-ui/RaisedButton';
 import { ReactMic } from 'react-mic';
+import axios from 'axios';
 
 class Home extends Component {
     constructor() {
@@ -27,7 +28,10 @@ class Home extends Component {
 
     handleTextSubmit(e) {
         e.preventDefault();
-        // API CALL
+        axios.get("/question").post(response => {
+
+            return response.data
+        });
         this.setState({
             textInput: "",
             voiceInput: "",
