@@ -11,7 +11,7 @@ class Home extends Component {
             textInput: "",
             voiceInput: "",
             answerText: "",
-            audioAnswer: "",
+            answerAudio: "",
             record: false
         }
 
@@ -29,13 +29,13 @@ class Home extends Component {
 
     handleTextSubmit(e) {
         e.preventDefault();
-        axios.post("/question/").then(response => {
+        axios.post("/question/", {type: "audio", input: this.state.voiceInput}).then(response => {
             this.setState({
                 textInput: "",
                 voiceInput: "",
                 record: false,
                 textAnswer: response.data,
-                audioAnswer: ""
+                answerAudio: ""
             })
         });
     }
@@ -43,12 +43,12 @@ class Home extends Component {
     handleAudioSubmit(e) {
         e.preventDefault();
         console.log(this.state.voiceInput);
-        axios.post("/question/").then(response => {
+        axios.post("/question/", {type: "audio", input: this.state.voiceInput}).then(response => {
             this.setState({
                 textInput: "",
                 voiceInput: "",
                 record: false,
-                audioAnswer: response.data,
+                answerAudio: response.data,
                 textAnswer: ""
             })
         });
@@ -106,6 +106,15 @@ class Home extends Component {
             <div className="answer">
                 <h2>Answer:</h2>
                 <p className="answerText">{this.state.answerText}</p>
+            </div>
+        }
+        {this.state.answerAudio !== "" &&
+            <div className="answer">
+                <h2>Answer:</h2>
+                    <audio controls>
+                      <source src={this.state.answerAudio} type="audio/ogg"/>
+                    Your browser does not support the audio element.
+                    </audio>
             </div>
         }
       </div>
