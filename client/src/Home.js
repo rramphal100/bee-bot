@@ -10,7 +10,8 @@ class Home extends Component {
         this.state = {
             textInput: "",
             voiceInput: "",
-            answer: "",
+            answerText: "",
+            audioAnswer: "",
             record: false
         }
 
@@ -28,26 +29,29 @@ class Home extends Component {
 
     handleTextSubmit(e) {
         e.preventDefault();
-        axios.get("/question").post(response => {
-
-            return response.data
+        axios.post("/question/").then(response => {
+            this.setState({
+                textInput: "",
+                voiceInput: "",
+                record: false,
+                textAnswer: response.data,
+                audioAnswer: ""
+            })
         });
-        this.setState({
-            textInput: "",
-            voiceInput: "",
-            record: false
-        })
     }
 
     handleAudioSubmit(e) {
         e.preventDefault();
         console.log(this.state.voiceInput);
-        // API CALL
-        this.setState({
-            textInput: "",
-            voiceInput: "",
-            record: false
-        })
+        axios.post("/question/").then(response => {
+            this.setState({
+                textInput: "",
+                voiceInput: "",
+                record: false,
+                audioAnswer: response.data,
+                textAnswer: ""
+            })
+        });
     }
 
     startRecording() {
@@ -101,7 +105,7 @@ class Home extends Component {
         {this.state.answerText !== "" &&
             <div className="answer">
                 <h2>Answer:</h2>
-                <p className="answerText">{this.state.answer}</p>
+                <p className="answerText">{this.state.answerText}</p>
             </div>
         }
       </div>
