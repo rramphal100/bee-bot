@@ -1,0 +1,68 @@
+* {
+     font-family: "Titillium Web", sans-serif;
+}
+
+body {
+    margin: 0;
+    padding: 0;
+}
+
+h1, h2, h3, h4, h5, h6 {
+    font-family: "Ubuntu", sans-serif;
+    text-align: center;
+}
+
+form {
+    margin: auto;
+    max-width: 500px;
+    width: 90%;
+}
+
+.button {
+    display: block;
+    margin: auto;
+}
+
+.home {
+    min-height: 100vh;
+}
+
+.home h3 {
+    margin: 50px auto;
+    font-size: 22px;
+    font-weight: 500;
+}
+
+.home h4 {
+    margin: 50px auto;
+    font-size: 20px;
+    font-weight: 400;
+}
+
+footer {
+    width: 100%;
+    margin: auto;
+    border-top: 1px solid black;
+    margin-top: 50px;
+    background-color: yellow;
+    padding-bottom: 20px;
+}
+
+footer div {
+    margin: auto;
+    text-align: center;
+}
+
+footer .fa {
+    margin-left: 10px;
+    margin-right: 10px;
+    font-size: 24px;
+}
+
+footer h5 {
+    margin-bottom: 0;
+}
+
+.soundWave {
+    width: 100%;
+}
