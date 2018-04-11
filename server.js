@@ -12,7 +12,7 @@ const app = express();
 app.use(express.static(path.join(__dirname, "client", "build")))
 app.use(bodyParser.json());
 app.use(morgan("dev"));
-app.use("/issues", require('./routes/issues'));
+app.use("/question", require('./routes/questions'));
 
 mongoose.connect(process.env.MONGODB_URI || "mongodb://localhost/issues", err => {
     if (err) throw err;
