@@ -35,11 +35,4 @@ questionRoutes.post('/', (req, res) => {
     });
 });
 
-questionRoutes.delete('/:id', (req, res) => {
-    Question.findByIdAndRemove(req.params.id, (err, removedQuestion) => {
-        if (err) return res.status(500).send(err);
-        return res.status(202).send(removedQuestion);
-    });
-});
-
 module.exports = questionRoutes;
