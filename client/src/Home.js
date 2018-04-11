@@ -48,7 +48,7 @@ class Home extends Component {
                 textInput: "",
                 voiceInput: "",
                 record: false,
-                answerAudio: response.data,
+                answerAudio: "",
                 textAnswer: ""
             })
         });

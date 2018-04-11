@@ -75,6 +75,12 @@ footer .fa {
     font-size: 24px;
 }
 
+footer .fa:hover {
+    transition-duration: 300ms;
+    color: grey;
+    cursor: pointer;
+}
+
 footer h5 {
     margin-bottom: 0;
 }
