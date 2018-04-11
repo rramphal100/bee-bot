@@ -111,7 +111,7 @@ class Home extends Component {
         {this.state.answerAudio !== "" &&
             <div className="answer">
                 <h2>Answer:</h2>
-                    <audio controls>
+                    <audio controls autoplay>
                       <source src={this.state.answerAudio} type="audio/ogg"/>
                     Your browser does not support the audio element.
                     </audio>
