@@ -25,6 +25,8 @@ form {
 
 .home {
     min-height: 100vh;
+    background: linear-gradient(rgb(255, 255, 255, 0.3), rgb(255, 255, 255, 0.3)), url("./Images/background.jpg") no-repeat center center;
+    background-size: cover;
 }
 
 .home h3 {
